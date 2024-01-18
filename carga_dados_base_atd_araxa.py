@@ -1,6 +1,5 @@
 import os
 from airflow import DAG
-from json_reader import carrega_arquivo_json
 from datetime import datetime
 from airflow.utils.task_group import TaskGroup
 from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
@@ -14,6 +13,11 @@ default_args = {
     'owner': 'airflow',
     'start_date': datetime(2023, 1, 1),
 }
+
+def carrega_arquivo_json(arquivo):
+    with open(arquivo, 'r') as arquivo:
+        dados = json.load(arquivo)
+    return dados
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
