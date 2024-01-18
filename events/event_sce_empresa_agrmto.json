@@ -1,0 +1,15 @@
+{
+	"tabela_a_ser_migrada": "SCE_EMPRESA_AGRMTO",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_EMPRESA",
+			"colunas_da_principal": [
+				"CD_EMPRESA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_EMPRESA"
+			]
+		}
+	]
+}

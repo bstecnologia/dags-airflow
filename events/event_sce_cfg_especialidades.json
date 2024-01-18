@@ -1,0 +1,5 @@
+{
+	"tabela_a_ser_migrada": "SCE_CFG_ESPECIALIDADES",
+	"separador": ",",
+	"chave_primaria": "CD_ESPEC"
+}

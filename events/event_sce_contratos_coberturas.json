@@ -1,0 +1,33 @@
+{
+	"tabela_a_ser_migrada": "SCE_CONTRATOS_COBERTURAS",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_BENEFICIARIOS",
+			"colunas_da_principal": [
+				"CD_UNIMED"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CFG_UNIMEDS",
+			"colunas_da_principal": [
+				"CD_UNIMED"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		},
+		{
+			"nome_tabela": "SCE_GRUPOS",
+			"colunas_da_principal": [
+				"CD_GRUPO"
+			],
+			"colunas_do_tabela_join": [
+				"CD_GRUPO"
+			]
+		}
+	]
+}

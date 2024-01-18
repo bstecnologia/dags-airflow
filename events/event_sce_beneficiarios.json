@@ -1,0 +1,42 @@
+{
+	"tabela_a_ser_migrada": "SCE_BENEFICIARIOS",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_CFG_UNIMEDS",
+			"colunas_da_principal": [
+				"CD_UNIMED"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CFG_UNIMEDS",
+			"colunas_da_principal": [
+				"CD_UNI_LOCAL_ATEND"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CONTRATOS_VENDA",
+			"colunas_da_principal": [
+				"CD_CONTRATO_VENDA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_CONTRATO_VENDA"
+			]
+		},
+		{
+			"nome_tabela": "SCE_PESSOAS",
+			"colunas_da_principal": [
+				"CD_PESSOA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_PESSOA"
+			]
+		}
+	]
+}

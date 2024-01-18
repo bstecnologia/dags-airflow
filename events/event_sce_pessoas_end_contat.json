@@ -1,0 +1,15 @@
+{
+	"tabela_a_ser_migrada": "SCE_PESSOAS_END_CONTAT",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_PESSOAS_ENDERECOS",
+			"colunas_da_principal": [
+				"CD_ENDERECO"
+			],
+			"colunas_do_tabela_join": [
+				"CD_END"
+			]
+		}
+	]
+}

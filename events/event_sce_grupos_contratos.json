@@ -1,0 +1,24 @@
+{
+	"tabela_a_ser_migrada": "SCE_GRUPOS_CONTRATOS",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_CONTRATOS_VENDA",
+			"colunas_da_principal": [
+				"CD_CONTRATO_VENDA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_CONTRATO_VENDA"
+			]
+		},
+		{
+			"nome_tabela": "SCE_GRUPOS",
+			"colunas_da_principal": [
+				"CD_GRUPO"
+			],
+			"colunas_do_tabela_join": [
+				"CD_GRUPO"
+			]
+		}
+	]
+}

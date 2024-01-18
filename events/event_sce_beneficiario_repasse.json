@@ -1,0 +1,60 @@
+{
+	"tabela_a_ser_migrada": "SCE_BENEFICIARIO_REPASSE",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_BENEFICIARIOS",
+			"colunas_da_principal": [
+				"CD_CARTEIRA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_CARTEIRA"
+			]
+		},
+		{
+			"nome_tabela": "SCE_BENEFICIARIOS",
+			"colunas_da_principal": [
+				"CD_DEPEN"
+			],
+			"colunas_do_tabela_join": [
+				"CD_DEPEN"
+			]
+		},
+		{
+			"nome_tabela": "SCE_BENEFICIARIOS",
+			"colunas_da_principal": [
+				"CD_FAMI"
+			],
+			"colunas_do_tabela_join": [
+				"CD_FAMI"
+			]
+		},
+		{
+			"nome_tabela": "SCE_BENEFICIARIOS",
+			"colunas_da_principal": [
+				"CD_UNIMED"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CFG_UNIMEDS",
+			"colunas_da_principal": [
+				"CD_UNIMED_REPASSE"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CFG_UNIMEDS",
+			"colunas_da_principal": [
+				"CD_UNIMED_REPASSE_VIA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		}
+	]
+}

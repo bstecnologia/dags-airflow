@@ -1,0 +1,24 @@
+{
+	"tabela_a_ser_migrada": "SCE_PLANOS",
+	"separador": ";",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_ABRANGENCIAS",
+			"colunas_da_principal": [
+				"CD_ABRANGENCIA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_ABRANGENCIA"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CFG_REDE_ATEND",
+			"colunas_da_principal": [
+				"SG_REDE"
+			],
+			"colunas_do_tabela_join": [
+				"SG_REDE"
+			]
+		}
+	]
+}

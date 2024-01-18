@@ -1,0 +1,34 @@
+{
+	"tabela_a_ser_migrada": "SCE_PRESTADORES",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_CFG_UFS",
+			"colunas_da_principal": [
+				"CD_UF_CRM"
+			],
+			"colunas_do_tabela_join": [
+				"SG_UF"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CFG_UNIMEDS",
+			"colunas_da_principal": [
+				"CD_UNIMED"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		},
+		{
+			"nome_tabela": "SCE_PESSOAS",
+			"colunas_da_principal": [
+				"CD_PESSOA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_PESSOA"
+			]
+		}
+	],
+	"constraints_a_nao_validar": ["C_SCE_PREST_TPCONSEL_OBRIG", "C_SCE_PREST_CDUF_OBRIG","C_SCE_PREST_CRM_OBRIG"]
+}

@@ -1,0 +1,5 @@
+{
+	"tabela_a_ser_migrada": "SCE_CFG_REDE_ATEND",
+	"separador": ",",
+	"chave_primaria": "SG_REDE"
+}

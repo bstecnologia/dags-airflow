@@ -1,0 +1,33 @@
+{
+	"tabela_a_ser_migrada": "SCE_ABRANGENCIAS_CARENCIAS",
+	"separador": ";",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_ABRANGENCIAS",
+			"colunas_da_principal": [
+				"CD_ABRANGENCIA"
+			],
+			"colunas_do_tabela_join": [
+				"CD_ABRANGENCIA"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CFG_UNIMEDS",
+			"colunas_da_principal": [
+				"CD_UNIMED"
+			],
+			"colunas_do_tabela_join": [
+				"CD_UNIMED"
+			]
+		},
+		{
+			"nome_tabela": "SCE_GRUPOS",
+			"colunas_da_principal": [
+				"CD_GRUPO_ITEM"
+			],
+			"colunas_do_tabela_join": [
+				"CD_GRUPO"
+			]
+		}
+	]
+}

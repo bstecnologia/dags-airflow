@@ -1,0 +1,24 @@
+{
+	"tabela_a_ser_migrada": "SCE_GRUPOS_PRESTADORES",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_GRUPOS",
+			"colunas_da_principal": [
+				"CD_GRUPO"
+			],
+			"colunas_do_tabela_join": [
+				"CD_GRUPO"
+			]
+		},
+		{
+			"nome_tabela": "SCE_PRESTADORES",
+			"colunas_da_principal": [
+				"CD_PRESTADOR"
+			],
+			"colunas_do_tabela_join": [
+				"CD_PREST"
+			]
+		}
+	]
+}

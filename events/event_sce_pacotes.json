@@ -1,0 +1,15 @@
+{
+	"tabela_a_ser_migrada": "SCE_PACOTES",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_PRESTADORES",
+			"colunas_da_principal": [
+				"CD_PREST"
+			],
+			"colunas_do_tabela_join": [
+				"CD_PREST"
+			]
+		}
+	]
+}

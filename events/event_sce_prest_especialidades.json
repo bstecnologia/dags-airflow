@@ -1,0 +1,24 @@
+{
+	"tabela_a_ser_migrada": "SCE_PREST_ESPECIALIDADES",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_CFG_ESPECIALIDADES",
+			"colunas_da_principal": [
+				"CD_ESPEC"
+			],
+			"colunas_do_tabela_join": [
+				"CD_ESPEC"
+			]
+		},
+		{
+			"nome_tabela": "SCE_PRESTADORES",
+			"colunas_da_principal": [
+				"CD_PREST"
+			],
+			"colunas_do_tabela_join": [
+				"CD_PREST"
+			]
+		}
+	]
+}

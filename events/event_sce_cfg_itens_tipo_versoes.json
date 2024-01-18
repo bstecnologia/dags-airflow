@@ -1,0 +1,15 @@
+{
+	"tabela_a_ser_migrada": "SCE_CFG_ITENS_TIPOS_VERSOES",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_CFG_ITENS_TIPOS",
+			"colunas_da_principal": [
+				"TP_ITEM"
+			],
+			"colunas_do_tabela_join": [
+				"TP_ITEM"
+			]
+		}
+	]
+}

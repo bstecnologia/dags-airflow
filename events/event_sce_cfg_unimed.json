@@ -1,0 +1,24 @@
+{
+	"tabela_a_ser_migrada": "SCE_CFG_UNIMEDS",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_CFG_MUNICIPIOS",
+			"colunas_da_principal": [
+				"CD_MUNIC"
+			],
+			"colunas_do_tabela_join": [
+				"CD_MUNIC"
+			]
+		},
+		{
+			"nome_tabela": "SCE_CFG_BANCOS",
+			"colunas_da_principal": [
+				"NR_BANCO"
+			],
+			"colunas_do_tabela_join": [
+				"NR_BANCO"
+			]
+		}
+	]
+}

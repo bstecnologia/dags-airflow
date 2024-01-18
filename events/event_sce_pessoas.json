@@ -1,0 +1,6 @@
+{
+	"tabela_a_ser_migrada": "SCE_PESSOAS",
+	"separador": ",",
+	"chave_primaria": "CD_PESSOA",
+	"constraints_a_nao_validar": ["C_SCE_PES_TP_CNPJ"]
+}

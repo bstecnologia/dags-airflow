@@ -1,0 +1,24 @@
+{
+	"tabela_a_ser_migrada": "SCE_PLANOS_COB_EXCECOES",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_CFG_MUNICIPIOS",
+			"colunas_da_principal": [
+				"CD_MUNIC"
+			],
+			"colunas_do_tabela_join": [
+				"CD_MUNIC"
+			]
+		},
+		{
+			"nome_tabela": "SCE_PLANOS",
+			"colunas_da_principal": [
+				"CD_PLANO"
+			],
+			"colunas_do_tabela_join": [
+				"CD_PLANO"
+			]
+		}
+	]
+}

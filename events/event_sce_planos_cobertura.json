@@ -1,0 +1,24 @@
+{
+	"tabela_a_ser_migrada": "SCE_PLANOS_COBERTURA",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_GRUPOS",
+			"colunas_da_principal": [
+				"CD_GRUPO"
+			],
+			"colunas_do_tabela_join": [
+				"CD_GRUPO"
+			]
+		},
+		{
+			"nome_tabela": "SCE_PLANOS",
+			"colunas_da_principal": [
+				"CD_PLANO"
+			],
+			"colunas_do_tabela_join": [
+				"CD_PLANO"
+			]
+		}
+	]
+}

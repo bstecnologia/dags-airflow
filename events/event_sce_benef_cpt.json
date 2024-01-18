@@ -1,0 +1,15 @@
+{
+	"tabela_a_ser_migrada": "SCE_BENEF_CPT",
+	"separador": ",",
+	"tabelas_join": [
+		{
+			"nome_tabela": "SCE_CFG_CIDS",
+			"colunas_da_principal": [
+				"CD_CID"
+			],
+			"colunas_do_tabela_join": [
+				"CD_CID"
+			]
+		}
+	]
+}

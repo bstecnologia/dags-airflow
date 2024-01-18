@@ -1,0 +1,5 @@
+{
+	"tabela_a_ser_migrada": "SCE_GRUPOS",
+	"separador": ",",
+	"chave_principal": "CD_GRUPO"
+}
