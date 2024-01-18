@@ -38,15 +38,5 @@ sce_cfg_especialidades = SparkSubmitOperator(
 )
 
 
-dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_cfg_unimed.json'))
-sce_cfg_unimeds= SparkSubmitOperator(
-    task_id='SCE_CFG_UNIMEDS',
-    conn_id='spark',
-    application=os.path.join(current_dir+'/migracao_csv', 'migrador.py'),
-    jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
-    application_args=[json.dumps(dados)],
-    dag=dag
-)
 
-
-operacionais >> sce_cfg_especialidades >> sce_cfg_unimeds
+operacionais >> sce_cfg_especialidades
