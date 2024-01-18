@@ -14,6 +14,11 @@ default_args = {
     'start_date': datetime(2023, 1, 1),
 }
 
+def carrega_arquivo_json(arquivo):
+    with open(arquivo, 'r') as arquivo:
+        dados = json.load(arquivo)
+    return dados
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 dag = DAG('CARGA_DE_DADOS_ATD_ARAXA_EXPERIMENTAL', description='DAG para realizar a migração de araxa ',
