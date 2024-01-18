@@ -1,6 +1,6 @@
 import os
 from airflow import DAG
-from json_reader import carrega_arquivo_json
+from dags-airflow.json_reader import carrega_arquivo_json
 from datetime import datetime
 from airflow.utils.task_group import TaskGroup
 from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
