@@ -15,7 +15,7 @@ def get_session():
 
 def retornar_data_frame_spark(session,file_name, sepatator):
     arquivos_dir = os.path.join(current_dir, 'dags', 'migracao_csv', 'arquivos')
-    df = session.read.load(os.path.join(arquivos_dir, f"/opt/dags/dags-airflow/migracao_csv/arquivos/{file_name}.csv"), format="csv",
+    df = session.read.load(os.path.join(arquivos_dir, f"/opt/spark-data/arquivos/{file_name}.csv"), format="csv",
                                inferSchema="true", sep=sepatator, header="true"
                                )
     return df
