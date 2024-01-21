@@ -9,10 +9,10 @@ def get_session():
     spark = (SparkSession.builder
              .appName("nova-data")
              .config("spark.sql.legacy.timeParserPolicy", "LEGACY")
+             .config("spark.driver.host", "spark-master")
+             .config("spark.driver.port", "7077")
              .getOrCreate()
              )
-    spark.conf.set("spark.driver.host", "spark-master")
-    spark.conf.set("spark.driver.port", "7077")
     return spark
 
 def retornar_data_frame_spark(session,file_name, sepatator):
