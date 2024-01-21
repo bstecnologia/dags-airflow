@@ -38,7 +38,7 @@ sce_cfg_especialidades = SparkSubmitOperator(
     application=os.path.join(current_dir + '/migracao_csv', 'migrador.py'),
     jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
     application_args=[json.dumps(dados)],
-    conf="spark.driver.host=10.97.62.143",
+   ## conf="spark.driver.host=10.97.62.143",
     dag=dag
 )
 
