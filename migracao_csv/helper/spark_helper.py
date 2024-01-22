@@ -2,14 +2,18 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 import re
 import os
+import socket
 
 current_dir = os.path.dirname(os.path.abspath('airflow'))
 
 def get_session():
+    host_name = socket.gethostname()
+    ip_address = socket.gethostbyname(host_name)
+
     spark = (SparkSession.builder
              .appName("nova-data")
              .config("spark.sql.legacy.timeParserPolicy", "LEGACY")
-             .config("spark.driver.host", "10.98.96.8")
+             .config("spark.driver.host", ip_address)
              #.config("spark.driver.port", "43031")
              .getOrCreate()
              )
