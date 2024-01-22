@@ -26,11 +26,7 @@ dag = DAG('CARGA_DE_DADOS_ATD_ARAXA_EXPERIMENTAL', description='DAG para realiza
 
 operacionais = TaskGroup('OPERACIONAIS', dag=dag)
 
-spark_submit_conf = [
-    "--conf", "spark.driver.host=10.97.62.143"
-]
-
-##21
+##23
 dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_cfg_especialidades.json'))
 sce_cfg_especialidades = SparkSubmitOperator(
     task_id='SCE_CFG_ESPECIALIDADES',

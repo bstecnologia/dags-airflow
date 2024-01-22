@@ -11,10 +11,9 @@ def get_session():
     ip_address = socket.gethostbyname(host_name)
 
     spark = (SparkSession.builder
-             .appName("nova-data")
+             .appName("migrador")
              .config("spark.sql.legacy.timeParserPolicy", "LEGACY")
              .config("spark.driver.host", ip_address)
-             #.config("spark.driver.port", "43031")
              .getOrCreate()
              )
     return spark
