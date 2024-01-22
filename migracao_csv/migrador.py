@@ -7,6 +7,8 @@ if __name__ == '__main__':
     host_name = socket.gethostname()
     # Obtém o endereço IP associado ao nome do host
     ip_address = socket.gethostbyname(host_name)
+    print("Hostname: ", host_name)
+    print("Endereço IP: ", ip_address)
     file_for_migration = sys.argv[1]
     dado_a_ser_migrado = json.loads(file_for_migration)
 
