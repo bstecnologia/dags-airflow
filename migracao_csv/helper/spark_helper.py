@@ -10,7 +10,7 @@ def get_session():
              .appName("nova-data")
              .config("spark.sql.legacy.timeParserPolicy", "LEGACY")
              .config("spark.driver.host", "10.98.96.8")
-             .config("spark.driver.port", "43031")
+             #.config("spark.driver.port", "43031")
              .getOrCreate()
              )
     return spark
