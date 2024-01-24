@@ -21,7 +21,7 @@ def carrega_arquivo_json(arquivo):
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-dag = DAG('CARGA_DE_DADOS_ATD_ARAXA_EXPERIMENTAL_2', description='DAG para realizar a migração de araxa ',
+dag = DAG('CARGA_DE_TESTE', description='DAG para realizar a migração de araxa ',
           schedule_interval=None, start_date=datetime(2021, 1, 1), catchup=False)
 
 operacionais = TaskGroup('OPERACIONAIS', dag=dag)
