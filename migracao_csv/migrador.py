@@ -38,13 +38,13 @@ if __name__ == '__main__':
     save_dataframe_database(df_log, 'migracao_log', get_data_base_acess_airflow())
 
     estrutura_da_tabela_de_banco = get_dataframame_database(get_session(), tabela_a_ser_migrada,
-                                                    get_data_base_acess_integracao_replica())
+                                                    get_data_base_acess_atd_araxa())
 
     data_frame_spark = seta_mascara_de_datas_no_dataframe(estrutura_da_tabela_de_banco, data_frame_spark)
     create_table_temp(data_frame_spark, tabela_a_ser_migrada)
 
     data_frame_tamanho_das_colunas = retorna_tamanho_das_colunas(get_session(), tabela_a_ser_migrada,
-                                                                    get_data_base_acess_integracao_replica())
+                                                                    get_data_base_acess_atd_araxa())
 
     filtro = retorna_filtro_registros_tamanho_correto(data_frame_tamanho_das_colunas)
     logger.warning(
@@ -61,7 +61,7 @@ if __name__ == '__main__':
         ##asyncio.run(send_data_from_database(data_frame_excedido, tabela_a_ser_migrada, 'TOTAL_ERROS_TAMANHO', sequence))
 
     data_frame_valor_default = retorna_valor_default_colunas(get_session(), tabela_a_ser_migrada,
-                                                                    get_data_base_acess_integracao_replica())
+                                                                    get_data_base_acess_atd_araxa())
 
     data_frame_spark = seta_valor_default_das_colunas(data_frame_valor_default, data_frame_spark)
     logger.warning(
@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
         save_dataframe_database(df_log, 'migracao_log', get_data_base_acess_airflow())
 
-    data_frame_constrains = get_constraints_type_check(get_session(), tabela_a_ser_migrada, get_data_base_acess_integracao_replica())
+    data_frame_constrains = get_constraints_type_check(get_session(), tabela_a_ser_migrada, get_data_base_acess_atd_araxa())
 
     if data_frame_constrains.count() > 0:
         for row in data_frame_constrains.collect():
@@ -127,7 +127,7 @@ if __name__ == '__main__':
 
     if 'tabelas_join' in dado_a_ser_migrado:
         for tabela in dado_a_ser_migrado['tabelas_join']:
-            df_tabela_join = get_dataframame_database(get_session(), tabela['nome_tabela'], get_data_base_acess_integracao_replica())
+            df_tabela_join = get_dataframame_database(get_session(), tabela['nome_tabela'], get_data_base_acess_atd_araxa())
             create_table_temp(df_tabela_join, tabela['nome_tabela'])
 
 
@@ -157,12 +157,12 @@ if __name__ == '__main__':
             create_table_temp(data_frame_spark, tabela_a_ser_migrada)
 
     try:
-        save_dataframe_database(data_frame_spark, tabela_a_ser_migrada, get_data_base_replica_sql_server())
+        save_dataframe_database(data_frame_spark, tabela_a_ser_migrada, get_data_base_acess_atd_araxa())
         df_log = save_log_dataframe(get_session(), tabela_a_ser_migrada,
                                     "TOTAL_REGISTROS_MIGRADOS", '',
                                     data_frame_spark.count(), sequence)
 
-        save_dataframe_database(df_log, 'migracao_log', get_data_base_acess_atd_araxa())
+        save_dataframe_database(df_log, 'migracao_log', get_data_base_acess_airflow())
     except Exception as e:
         logger.warning(
             f"OCORREU UM ERRO AO SALVAR OS DADOS {e} FIM")
