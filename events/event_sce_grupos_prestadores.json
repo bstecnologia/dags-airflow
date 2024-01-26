@@ -1,6 +1,7 @@
 {
 	"tabela_a_ser_migrada": "SCE_GRUPOS_PRESTADORES",
 	"separador": ",",
+	"chave_primaria": ["CD_GRUPO", "CD_PRESTADOR"],
 	"tabelas_join": [
 		{
 			"nome_tabela": "SCE_GRUPOS",
