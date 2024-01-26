@@ -157,6 +157,7 @@ if __name__ == '__main__':
             create_table_temp(data_frame_spark, tabela_a_ser_migrada)
 
     try:
+        data_frame_spark.show()
         save_dataframe_database(data_frame_spark, tabela_a_ser_migrada, get_data_base_acess_atd_araxa())
         df_log = save_log_dataframe(get_session(), tabela_a_ser_migrada,
                                     "TOTAL_REGISTROS_MIGRADOS", '',

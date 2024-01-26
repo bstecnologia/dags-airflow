@@ -36,7 +36,7 @@ gerar_sequencial = SparkSubmitOperator(
     task_group=operacionais
 )
 
-##01
+##01-1
 dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_grupos_prestadores.json'))
 sce_cfg_especialidades = SparkSubmitOperator(
     task_id='SCE_GRUPOS_PRESTADORES',
