@@ -58,6 +58,57 @@ event_sce_his_emis_cart = SparkSubmitOperator(
     dag=dag
 )
 
+##02
+dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_benef_titulos.json'))
+event_sce_benef_titulos = SparkSubmitOperator(
+    task_id='SCE_BENEF_TITULOS',
+    conn_id='spark',
+    application=os.path.join(current_dir + '/migracao_csv', 'migrador.py'),
+    jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
+    application_args=[json.dumps(dados)],
+    dag=dag
+)
+
+dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_contratos_coberturas.json'))
+sce_contratos_coberturas = SparkSubmitOperator(
+    task_id='SCE_CONTRATOS_COBERTURAS',
+    conn_id='spark',
+    application=os.path.join(current_dir+'/migracao_csv', 'migrador.py'),
+    jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
+    application_args=[json.dumps(dados)],
+    dag=dag
+)
+
+dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_prest_end_vinc.json'))
+event_sce_prest_end_vinc = SparkSubmitOperator(
+    task_id='SCE_PREST_END_VINC',
+    conn_id='spark',
+    application=os.path.join(current_dir+'/migracao_csv', 'migrador.py'),
+    jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
+    application_args=[json.dumps(dados)],
+    dag=dag
+)
+
+dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_prest_rede_atend_parcial.json'))
+sce_prest_rede_atend_parcial = SparkSubmitOperator(
+    task_id='SCE_PREST_REDE_ATEND_PARCIAL',
+    conn_id='spark',
+    application=os.path.join(current_dir + '/migracao_csv', 'migrador.py'),
+    jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
+    application_args=[json.dumps(dados)],
+    dag=dag
+)
+
+dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_beneficiario_repasse.json'))
+sce_beneficiario_repasse = SparkSubmitOperator(
+    task_id='SCE_BENEFICIARIO_REPASSE',
+    conn_id='spark',
+    application=os.path.join(current_dir+'/migracao_csv', 'migrador.py'),
+    jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
+    application_args=[json.dumps(dados)],
+    dag=dag
+)
 
 
-operacionais >> sce_cfg_especialidades >> event_sce_his_emis_cart
+operacionais >> sce_cfg_especialidades >> event_sce_his_emis_cart >> event_sce_benef_titulos >> sce_contratos_coberturas \
+>> event_sce_prest_end_vinc >> sce_prest_rede_atend_parcial >> sce_beneficiario_repasse
