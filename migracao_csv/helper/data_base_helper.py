@@ -10,7 +10,7 @@ def get_data_base_acess_atd():
 
 def get_data_base_acess_atd_araxa():
     return {
-        'url': 'jdbc:oracle:thin:@sgu164ho.oracle.sgusuite.com.br:1521:sgu164ho',
+        'url': 'jdbc:oracle:thin:@//sgu164ho.oracle.sgusuite.com.br:1521/sgu164ho',
         'properties': {
             'user': 'UD999',
             'password': 'hygS46gs37s',
