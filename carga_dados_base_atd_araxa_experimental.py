@@ -110,5 +110,5 @@ sce_beneficiario_repasse = SparkSubmitOperator(
 )
 
 
-operacionais >> sce_cfg_especialidades >> event_sce_his_emis_cart >> event_sce_benef_titulos >> sce_contratos_coberturas \
->> event_sce_prest_end_vinc >> sce_prest_rede_atend_parcial >> sce_beneficiario_repasse
+operacionais >> sce_cfg_especialidades >> event_sce_his_emis_cart >> event_sce_benef_titulos \
+>> event_sce_prest_end_vinc >> sce_prest_rede_atend_parcial >> sce_beneficiario_repasse >> sce_contratos_coberturas
