@@ -47,6 +47,17 @@ sce_cfg_especialidades = SparkSubmitOperator(
     dag=dag
 )
 
+##02
+dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_his_emis_cart.json'))
+event_sce_his_emis_cart = SparkSubmitOperator(
+    task_id='SCE_HIS_EMIS_CART',
+    conn_id='spark',
+    application=os.path.join(current_dir + '/migracao_csv', 'migrador.py'),
+    jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
+    application_args=[json.dumps(dados)],
+    dag=dag
+)
 
 
-operacionais >> sce_cfg_especialidades
+
+operacionais >> sce_cfg_especialidades >> event_sce_his_emis_cart
