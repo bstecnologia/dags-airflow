@@ -26,6 +26,16 @@ dag = DAG('CARGA_DE_DADOS_ATD_ARAXA', description='DAG para realizar a migraçã
 
 operacionais = TaskGroup('OPERACIONAIS', dag=dag)
 
+gerar_sequencial = SparkSubmitOperator(
+    task_id='GERAR_SEQUENCIAL',
+    conn_id='spark',
+    application=os.path.join(current_dir+'/migracao_csv', 'gerador_sequencia.py'),
+    jars=os.path.join(current_dir, 'postgresql-42.2.22.jar')+","+os.path.join(current_dir, 'ojdbc8-19.3.0.0.jar')+","+os.path.join(current_dir, 'mssql-jdbc-12.4.2.jre11.jar'),
+    application_args=[str(sequencia_uuid)],
+    dag=dag,
+    task_group=operacionais
+)
+
 ##01
 dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_grupos_prestadores.json'))
 sce_cfg_especialidades = SparkSubmitOperator(
