@@ -95,7 +95,7 @@ def get_constraints_type_check(session, table_name, class_helper):
 
 def retorna_tamanho_das_colunas(session, table_name, class_helper):
     return session.read.format("jdbc").option("url", class_helper['url']) \
-        .option("query"," SELECT DATA_LENGTH, COLUMN_NAME FROM ALL_TAB_COLUMNS "
+        .option("query"," SELECT DECODE(DATA_TYPE,'DATA_TYPE',DATA_LENGTH,COALESCE(DATA_PRECISION,22)) DATA_LENGTH, COLUMN_NAME FROM ALL_TAB_COLUMNS "
                         "WHERE TABLE_NAME = '"+table_name+"' AND DATA_TYPE IN('VARCHAR2','NUMBER')" )\
         .option("user", class_helper['properties']['user']) \
         .option("password", class_helper['properties']['password']).option("driver", class_helper['properties']['driver']).load()
