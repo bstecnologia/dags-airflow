@@ -74,8 +74,8 @@ def seta_mascara_de_datas_no_dataframe(data_for_data_base, data):
         if coluna in all_columns:
             if tipo == 'timestamp':
                 data = data.withColumn(coluna, when(col(coluna).isNotNull(), to_date(col(coluna), "dd/MM/yyyy")))
-            elif tipo.startswith('decimal'):
-                data = data.withColumn(coluna, col(coluna).cast(tipo))  # Ajuste o tipo conforme necessário
+            #elif tipo.startswith('decimal'):
+            #    data = data.withColumn(coluna, col(coluna).cast(tipo))  # Ajuste o tipo conforme necessário
         else:
             data = data.withColumn(coluna, lit(None).cast(tipo))
     return data

@@ -64,6 +64,7 @@ if __name__ == '__main__':
                                                                     get_data_base_acess_atd_araxa())
 
     data_frame_spark = seta_valor_default_das_colunas(data_frame_valor_default, data_frame_spark)
+    data_frame_spark.show()
     logger.warning(
         f"DEPOIS DE SETAR OS VALORES DEFAULT:: {data_frame_spark.count()}")
     create_table_temp(data_frame_spark, tabela_a_ser_migrada)
@@ -75,6 +76,7 @@ if __name__ == '__main__':
         create_table_temp(data_frame_spark, tabela_a_ser_migrada)
         logger.warning(
             f"TOTAL QUERIE PARA TAMANHO CORRETO:: {data_frame_spark.count()}, {query}")
+        data_frame_spark.show()
 
     create_table_temp(data_frame_spark, tabela_a_ser_migrada)
 
