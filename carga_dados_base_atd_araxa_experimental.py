@@ -26,7 +26,7 @@ dag = DAG('CARGA_DE_DADOS_ATD_ARAXA', description='DAG para realizar a migraçã
 
 operacionais = TaskGroup('OPERACIONAIS', dag=dag)
 
-
+##01
 dados = carrega_arquivo_json(os.path.join(current_dir, 'events', 'event_sce_grupos_prestadores.json'))
 sce_cfg_especialidades = SparkSubmitOperator(
     task_id='SCE_GRUPOS_PRESTADORES',
